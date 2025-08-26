@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--Gjør klar en <p>tag for utskrift-->
+    <p id="utskrift"></p>
+
+
+    <script>
+//Deklarerer variabel med min alder.
+    const alder = 31
+//deklarerer en variabel for teksten som skal skrives ut.
+let utskrift ="";
+
+//Her lager vi en if-else test.
+//Første betingelse er dersom alder er mindre enn 18: lagre teksten "...ikke myndig" i variabelen utskrift
+//Andre betingelse er dersom du er større eller lik 18 OG mindre eller lik 62: Lagre teksten "...myndig, klar for studier" i variabelen utskrift.
+//For alle betingelser (else): lagre teksten "...pensjonsklar" i variabelen utskrift.
+if(alder <18) {
+    utskrift = "Du er ikke myndig";
+} else if (alder >=18 && alder <62) {
+    utskrift = "Du er myndig, og klar for studier";
+} else {
+    utskrift = "Du er pensjonsklar!"
+}
+
+//Til slutt; skriv teksten lagret i variabelen utskrift til <p>- tagen med id utskrift:
+    document.getElementById("utskrift").innerHTML = utskrift;
+    </script>
+</body>
+</html>

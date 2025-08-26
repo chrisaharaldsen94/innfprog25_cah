@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="Antall gutter og jenter"></p>
+    <script>
+
+//Lager variabel for hvert enkelt barn fra 1 til 3.
+const barn1 = "gutt"
+const barn2 = "gutt"
+const barn3 = "jente"
+
+//Her lagde jeg variabel for de 2 kjønnene med verdien 0 i utgangspunkt.
+let = antall_gutter = 0
+let = antall_jenter = 0
+
+let utskrift
+
+if(barn1 == "gutt") {
+    antall_gutter += 1
+} else {
+    antall_jenter += 1
+}
+if(barn2 == "gutt") {
+    antall_gutter += 1
+} else {
+    antall_jenter += 1
+}
+if(barn3 == "gutt") {
+    antall_gutter += 1
+} else {
+    antall_jenter += 1
+}
+
+utskrift = "gutter: " + antall_gutter + ", jenter: " + antall_jenter
+
+document.getElementById("Antall gutter og jenter").innerHTML = utskrift;
+
+    </script>
+</body>
+</html>
