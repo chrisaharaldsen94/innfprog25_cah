@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <h1 id="companyname"></h1>
+        <h1 id="companyname">Programmeriet</h1>
         <form>
             <input type="text" />
             <button>Søk</button>
@@ -27,6 +27,11 @@
                 <img src="avatar.png" alt="Navn Navnesen" />
                 <p>Navn Navnesen<br />navn@email.com</p>
             </article>
+            <!-- La til en ekstra article da ett av kortene til arbeiderne manglet -->
+            <article class="card">
+                <img src="avatar.png" alt="Navn Navnesen" />
+                <p>Navn Navnesen<br />navn@email.com</p>
+            </article>
         </section>
     </main>
     <footer>
@@ -34,8 +39,9 @@
             <a href="https://www.flaticon.com/free-icons/user" title="female icons">User icons created by Prosymbols Premium, Freepik, Smashicons, and Vectors Market - found at Flaticon</a>
         </p>
     </footer>
-
-    <scripttt>
+    
+    <!-- Endret om til en <t> da det stod 3 opprinneling. -->
+    <script>
         //Variabel with company name
         const company = "Programmeriet"
 
@@ -47,19 +53,25 @@
         ]
 
         //Secret keys to access url and images
-        let images_folder = "img
+
+    // Endret til slutt fnutt <"> da det manglet etter let images_folder = "img
+        let images_folder = "img"
         let secret_key = 0
         let ak_key
         
         //Turn on or off safeguard to allow system to run
-        const safeguard = false
+
+        //Her endret jeg const safeguard = false til true. Variabelen må være true for å kunne se artiklene.
+        const safeguard = true
         
         //Control of safeguard to create image folder name
         if(safeguard === true) {
             ak_key = secret_key + 1
         }
         const safe_images_folder = images_folder += ak_key
-        console.logg("Image folder: " + safe_images_folder)
+
+        //Endret til 1 "g" i console.log da det var 2 "g" opprinnelig
+        console.log("Image folder: " + safe_images_folder)
 
         let HTML_employees = ""
 
@@ -71,11 +83,15 @@
                     <p>${e.position} | Kontor: ${e.office}</p>
                     <p>${e.email}</p>
                 </article>`)
-
-                document.getElementbyId("employee_list").innerHTML = HTML_employeeees
+        //Endret på slutten da det stod = HTML_employeeees med 4 "e" og skrev det riktig med 2. 
+        //Jeg har også endret "document.getElementbyId" til riktig format - document.getElementById
+            document.getElementById("employee_list").innerHTML = HTML_employees
         }
+        
 
         //System prints
+
+        
         document.getElementById("companyname").innerHTML = company
     </script>
 </body>
