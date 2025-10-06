@@ -27,13 +27,13 @@
         <img src="icons/c3_logo.svg" alt="Code Concept Collector" />
         <nav>
             <button id="notebookToggler"><img src="icons/notebook.svg" />Åpne kladdeboka <span class="shortcut">n</span></button>
-            <button id="infoToggler">Info / Hvordan spille <span class="shortcut">i</span></button>
+            <button id="infoToggler" onClick="toggleVisibility()">Info / Hvordan spille <span class="shortcut">i</span></button>
         </nav>
     </header>
     <main>
         
         <section id="notebook">
-            <div id="notebook-page">
+            <div id="notebook-page" class="hidden">
                 
                 <h2>Notater</h2>
                 <table>
@@ -127,6 +127,17 @@
         document.getElementById("arrays").innerHTML = notebook.arrays
         document.getElementById("loops").innerHTML = notebook.loops
         document.getElementById("functions").innerHTML = notebook.functions
+        }
+        
+        function toggleVisibility(){
+           const element = document.getElementById("info");
+           element.classList.toggle("hidden")
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+
         }
 
         updateStaticUI()
