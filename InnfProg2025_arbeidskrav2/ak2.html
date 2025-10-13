@@ -26,10 +26,27 @@
         
         //Din kode for å løse problem 1 her.
 
-        //PROBLEM 2
-        const programming_words = ["variabel","funksjon","array","objekt","loop","betingelse","klasse","rekursjon","algoritme","kompilator"]
+        for (let i = 0; i < 6; i++) {
+        const random_index = Math.floor(Math.random() * hexadecimal_characters_array.length)
+        random_color_code += hexadecimal_characters_array[random_index]
+        }
+        document.getElementById("random_color").innerHTML = random_color_code
 
+        //PROBLEM 2
+        const programming_words = ["variabel", "funksjon", "array", "objekt", "loop", "betingelse", "klasse", "rekursjon", "algoritme", "kompilator"]
         //Din kode for å løse problem 2 her.
+
+        if(programming_words = ("betingelse", "algoritme", "problemløsning") === true) {
+            document.getElementById("betingelse_sjekk").innerHTML = "Ja"
+            document.getElementById("algoritme_sjekk").innerHTML = "Ja"
+            document.getElementById("problemlosning_sjekk").innerHTML = "Ja"
+        } else {
+            document.getElementById("betingelse_sjekk").innerHTML = "Nei"
+            document.getElementById("algoritme_sjekk").innerHTML = "Nei"
+            document.getElementById("problemlosning_sjekk").innerHTML = "Nei"
+        }
+
+
 
         //PROBLEM 3
         const tall_array_en = [9, 13, 5, 62, 11, 6, 28, 31, 17]
