@@ -34,17 +34,22 @@
 
         //PROBLEM 2
         const programming_words = ["variabel", "funksjon", "array", "objekt", "loop", "betingelse", "klasse", "rekursjon", "algoritme", "kompilator"]
+        
         //Din kode for å løse problem 2 her.
 
-        if(programming_words = ("betingelse", "algoritme", "problemløsning") === true) {
-            document.getElementById("betingelse_sjekk").innerHTML = "Ja"
-            document.getElementById("algoritme_sjekk").innerHTML = "Ja"
-            document.getElementById("problemlosning_sjekk").innerHTML = "Ja"
-        } else {
-            document.getElementById("betingelse_sjekk").innerHTML = "Nei"
-            document.getElementById("algoritme_sjekk").innerHTML = "Nei"
-            document.getElementById("problemlosning_sjekk").innerHTML = "Nei"
+        //Her lagde jeg en funksjon for å sjekke ord. Da tok jeg med de tre ordene vi ble forespeilet-
+        //Og lagde en vanlig if else test for å sjekke om ordet fantes. Der fikk jeg ja til betingelse og algoritme-
+        //fikk så nei på problemløsning. Det så jeg for øvrig også ikke fantes inne i "programming_wordss"
+        function wordCheck(word){
+            if (programming_words.includes(word)){
+                return "ja"
+            } else {
+                return "nei"
+            }
         }
+        document.getElementById("betingelse_sjekk").innerHTML = wordCheck("betingelse")
+        document.getElementById("algoritme_sjekk").innerHTML = wordCheck("algoritme")
+        document.getElementById("problemlosning_sjekk").innerHTML = wordCheck("problemlosning")
 
 
 
@@ -53,6 +58,11 @@
         const tall_array_to = [23, 76, 88, 13, 56, 90, 42]
 
         //Din kode for å løse problem 3 her.
+
+        
+        
+        
+       
     </script>
 </body>
 </html>
