@@ -16,7 +16,7 @@
     <p>Finnes ordet "problemløsning" i Programmeringsord-arrayen? <span id="problemlosning_sjekk"></span></p>
     <h2>Problem 3</h2>
     <p>Gjennomsnittet av tallene i tall_array_en er <span id="avg_array_one"></span></p>
-    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_one"></span></p>
+    <p>Gjennomsnittet av tallene i tall_array_to er <span id="avg_array_two"></span></p>
 
     <script>
         //PROBLEM 1
@@ -26,6 +26,8 @@
         
         //Din kode for å løse problem 1 her.
 
+       //Her lagde jeg en funksjon vi har lært i timene til å kjøre de ulike tallene samt hvor jeg lagde en array til-
+       //Å få med alle tall og bokstaver slik at den kjørte ut tilfeldige fargekoder. 
         for (let i = 0; i < 6; i++) {
         const random_index = Math.floor(Math.random() * hexadecimal_characters_array.length)
         random_color_code += hexadecimal_characters_array[random_index]
@@ -39,7 +41,7 @@
 
         //Her lagde jeg en funksjon for å sjekke ord. Da tok jeg med de tre ordene vi ble forespeilet-
         //Og lagde en vanlig if else test for å sjekke om ordet fantes. Der fikk jeg ja til betingelse og algoritme-
-        //fikk så nei på problemløsning. Det så jeg for øvrig også ikke fantes inne i "programming_wordss"
+        //fikk så nei på problemløsning. Det så jeg for øvrig også ikke fantes inne i "programming_words"
         function wordCheck(word){
             if (programming_words.includes(word)){
                 return "ja"
@@ -47,6 +49,9 @@
                 return "nei"
             }
         }
+
+        //Her hentet jeg ID for å sjekke om ordet er i "programming_words" og sendte det i nettleser hvor jeg fikk
+        //svar på om ordene fantes eller ei. 
         document.getElementById("betingelse_sjekk").innerHTML = wordCheck("betingelse")
         document.getElementById("algoritme_sjekk").innerHTML = wordCheck("algoritme")
         document.getElementById("problemlosning_sjekk").innerHTML = wordCheck("problemlosning")
@@ -59,7 +64,28 @@
 
         //Din kode for å løse problem 3 her.
 
-        
+        //Lagde jeg en variabel til gjennomsnitt.
+        let gjennomsnitt
+
+        //Lagde en funksjon for å finne gjennomsnittet. Her fikk jeg mye hjelp fra cheatsheets fra timene våres-
+        //Fant det i "2025-cheatsheet-loops.html"
+        function gjennomsnittCheck(array){
+            let total = 0
+            array.forEach((item) => total += item)
+            gjennomsnitt = total / array.length
+            
+        }
+        //Her fikk jeg den til å kjøre "tall_array_en" og kjørte det ut slik at jeg fikk utregningen i console og i nettleser.
+        gjennomsnittCheck(tall_array_en)
+        console.log(gjennomsnitt)
+        document.getElementById("avg_array_one").innerHTML = gjennomsnitt
+
+        //Fikk jeg den til å kjøre "tall_array_two" og kjørte det ut slik at jeg fikk utregningen i console og i nettleser.
+        //Her byttet jeg også id fra "tall_array_one" til "tall_array_two" da begge hadde samme id og da ville kjørt feil-
+        //nettleser
+        gjennomsnittCheck(tall_array_to)
+        console.log(gjennomsnitt)
+        document.getElementById("avg_array_two").innerHTML = gjennomsnitt
         
         
        
