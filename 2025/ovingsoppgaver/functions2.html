@@ -7,12 +7,73 @@
 </head>
 <body>
     <script>
+//Her utfører vi et bestemt sett med handlinger for hver vare i handlelisten. Sekvense med disse handlingene 
+//Kunne vært laget som en funksjon. Se for deg følgende liksom-kode i forbindelse med hva som skjer for hver
+//vare i handlelisten:
+function sjekk (vare){
+    if(vare === true) {
+        handlekurv += vare
+        //vare lag til. returnerer til løkken, sjekk neste vare.
+        return
+    } else {
+        //Varen finnes ikke. returnerer til løkken, sjekk neste vare.
+        return
+    }
+}
 
-function myFirstTest() {
-    
+function sjekk(vare) {
+    if(vare === true) {
+        handlekurv += vare
+        //vare lagt til. returner til løkken, sjekk neste vare-.
+        return 
+    } else {
+        return
+    }
+}
+
+var handleliste = ['melk', 'brød', 'ost']
+
+//Løper gjennom handeliste med .map() og lagrer hver rad i vare.
+handleliste.map(vare =>
+    //kjør funksjonen sjekk() på hver verdi i arrayen handleliste.
+    sjekk(vare)
+)
+// DEKLARERE(lage) EN FUNKSJON.
+//
+function functionName(parameter) {
+    //place a code to run when calling function name here
+
+    //...imagine code here...
+
+    //after the last } the function is finished.
+}
+
+function printName(){
+    console.log("chris")
+}
+
+//call the function
+printName()
+
+
+//PARAMETERE
+//Vi kan bruke parametere for å sende verdier inn i funksjonen.
+//Disse kan vi da bruke i koden funskjonen kjører. Akkurat som vi bruker variabler andre steder i koden vår.
+
+//Vi navngir parametere selv når vi lager funksjonen.
+function printName(name){
+    console.log(name)
+}
+
+printName("chris")
+
+function printInfo(name, email, age) {
+    console.log(`name: ${name} (${age} y.o.). Email: ${email}`)
 }
 
 
+//Call the function, send values to parameters in correct order:
+printInfo("chris", "chrisanh@hiof.no", 31)
 
 
 
