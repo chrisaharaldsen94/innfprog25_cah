@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="drawingarea"></canvas>
+    <script>
+        const canvas = document.getElementById("drawingarea")
+
+        const ctx = canvas.getContext("2d")
+
+        canvas.width = 800
+        canvas.height = 600
+
+        const ball = {
+            x: canvas.width / 2,
+            y: canvas.height / 2,
+            radius: 20
+        }
+
+        
+
+        function drawBall(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        ctx.beginPath()
+        ctx.fillStyle = "#003366"
+        ctx.arc(ball.x, ball.y, ball.radius, 0, 2 * Math.PI)
+        ctx.fill()
+        ctx.closePath()
+        }
+
+        drawBall()
+
+        //setInterval(() => {
+           // ball.x += 20
+            //console.log(ball.x, ball,y)
+        //}, 1000)
+
+
+
+    </script>
+    
+</body>
+</html>
