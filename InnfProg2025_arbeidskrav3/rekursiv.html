@@ -14,13 +14,19 @@
     <script>
         /*
             Hva er en rekursiv funksjon?
-        
+
             --Ditt svar her. Husk kilder--
+            Rekursiv funksjon er en funksjon som kaller på seg selv.
         */
 
         function numberSelector() {
             // Din kode her
+            const numbers = "123456789";
+            const randomNumbers = Math.floor(Math.random() * numbers.length) + 1;
+            console.log(randomNumbers);
+            document.getElementById("numberList").innerHTML = randomNumbers
         }
+        
     </script>
 </body>
 </html>
