@@ -8,10 +8,26 @@
 <body>
     <h1>Passordgenerator</h1>
     <!-- Felter for brukervalg her -->
+        <p>
+            <input type="checkbox" name="lowercase" id="includeLowercase">
+            <label for="includeLowercase'"></label>
+        </p>
+        <p>
+            <input type="checkbox" name="uppercase" id="includeUppercase">
+            <label for="includeUppercase"></label>
+        </p>
+        <p>
+            <input type="checkbox" name="numbers" id="includeNumbers">
+            <label for="includeNumbers"></label>
+        </p>
 
+        <p>
+            <input type="checkbox" name="symbols" id="includeSymbols">
+            <label for="includeSymbols"></label>
+        </p>
 
-     <p>Ditt passord: <span id="generatedPassword"></span></p>
-
+    <p>Ditt passord: <span id="generatedPassword"></span></p>
+       
      <script>
         const lowercase = "abcdefghijklmnopqrstuvwxyz";
         const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -20,7 +36,25 @@
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
             /* Din kode her */
+
+            //Starter med en tom streng for alle tegnene som er tillat
+            let allowedCharacters = "";
+
+            //Her starter jeg å if-teste for å sjekke ut de ulike constene mine.
+            if (includeLowercase) {
+                allowedCharacters += lowercase
+            }
+            if (includeUppercase){
+                allowedCharacters += uppercase
+            }
+            if(includeNumbers){
+                allowedCharacters += numbers
+            }
+            if(includeSymbols){
+                allowedCharacters += symbols
+            }
         }
+        document.getElementById("generatedPassword")
      </script>
 </body>
 </html>

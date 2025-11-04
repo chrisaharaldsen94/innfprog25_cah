@@ -21,11 +21,26 @@
 
         function numberSelector() {
             // Din kode her
+            //Her tok jeg i utgangspunkt fra arbeidskrav 2, hvor vi skulle finne random hexkode. 
             const numbers = "123456789";
-            const randomNumbers = Math.floor(Math.random() * numbers.length) + 1;
+            const randomNumbers = Math.floor(Math.random() * numbers.length) + 1
             console.log(randomNumbers);
-            document.getElementById("numberList").innerHTML = randomNumbers
+            
+            
+            //Her fant jeg hjelp fra w3schools til å gjøre en if - else test.
+            if(randomNumbers === 4 || randomNumbers === 7){
+                // Skriver ut tallene fra listepunktene <li>
+                document.getElementById("numberList").innerHTML += `<li>${randomNumbers} </li>`
+            } else {
+                // Hvis ikke vil den kjøre på nytt
+                document.getElementById("numberList").innerHTML += `<li>${randomNumbers} </li>`
+                numberSelector()
+            }
         }
+
+        //Kaller på funksjonen på slutten for å kjøre selve koden.
+        numberSelector()
+        
         
     </script>
 </body>
