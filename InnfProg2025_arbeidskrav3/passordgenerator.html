@@ -9,28 +9,25 @@
     <h1>Passordgenerator</h1>
     <!-- Felter for brukervalg her -->
 
-        <p>
+        
             <label for="passwordLength">Passordlenge (8-50):</label>
-            <input type="password">
-        </p>
-        <p>
+            <!--Satte standard value til 8, slik at det skrives ut et passord med en lengde på 8 bokstaver, nummer eller symboler-->
+            <input type="number" id="passwordLength" value="8">
+        
+        <!--Her lagde jeg checkboxes for de ulike valgene man kan ta for å generere passordet-->
             <input type="checkbox" name="lowercase" id="includeLowercase">
             <label for="includeLowercase'">Inkluderer små bokstaver (a-z)</label>
-        </p>
-        <p>
+        
             <input type="checkbox" name="uppercase" id="includeUppercase">
             <label for="includeUppercase">Inkluderer store bokstaver (A-Z)</label>
-        </p>
-        <p>
+        
             <input type="checkbox" name="numbers" id="includeNumbers">
             <label for="includeNumbers">Inkluderer nummere (0-9)</label>
-        </p>
-
-        <p>
+       
             <input type="checkbox" name="symbols" id="includeSymbols">
             <label for="includeSymbols">Inkluderer symboler (#¤%&/...)</label>
-        </p>
-
+        
+        <!--Her lagde jeg en knapp som man kan trykke på for å generere passordet-->
         <button id="btnPassword">Generer passord her</button>
 
     <p>Ditt passord: <span id="generatedPassword"></span></p>
@@ -41,7 +38,7 @@
         const numbers = "0123456789";
         const symbols = "!@#$%^&*()_+-=[]{}|;:',.<>?/`~";
 
-
+        const btnPassword = document.getElementById("btnPassword")
         
 
         function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
@@ -49,28 +46,48 @@
 
             //Starter med en tom streng for alle tegnene som er tillat
             let allowedCharacters = "";
+            //Gjør det samme over for passordet som skal bli kjørt
+            let randompassword = "";
 
-            //Her starter jeg å if-teste for å sjekke ut de ulike constene mine.
-            if (includeLowercase) {
+            //Her starter jeg å if-teste for å sjekke ut de ulike constene mine. Jeg velger å 
+            if (includeLowercase === true) {
                 allowedCharacters += lowercase
             }
-            if (includeUppercase){
+            if (includeUppercase === true){
                 allowedCharacters += uppercase
             }
-            if(includeNumbers){
+            if(includeNumbers === true){
                 allowedCharacters += numbers
             }
-            if(includeSymbols){
+            if(includeSymbols === true){
                 allowedCharacters += symbols
             }
-        }
-        for (let i = 0; i < 6; i++) {
-        const allowedCharacters = Math.floor(Math.random() * allowedCharacters_array.length)
-        allowedCharacters += allowedCharacters_array[allowedCharacters]
-        }
-        document.getElementById("genereatedPassword").innerHTML = passwordgenerator
 
-        passwordgenerator()
+        let allowedCharacters_array = Array.from(allowedCharacters)
+            //Her lager jeg en for løkke for som jeg hentet fra arbeidskrav 2. for å kjøre de ulike elementene vi har i-
+            // "function passwordgenerator(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols)"
+            
+        for (let i = 0; i < length; i++) {
+        const allowedCharacters = Math.floor(Math.random() * allowedCharacters_array.length)
+        randompassword += allowedCharacters_array[allowedCharacters]
+        //Console logger for å se om det skjer noe i consolen før jeg kjører resten av koden.
+        console.log(randompassword)
+        }
+        document.getElementById("generatedPassword").innerHTML = randompassword
+    }
+        
+        //Henter ut det som skal bli skrevet ut når man trykker på "Generer passord her"
+        btnPassword.addEventListener("click", () => {
+            //Lagde const variabler som skal sjekke ut de ulike IDene jeg har laget i input og label felt
+            const lengthInput = document.getElementById("passwordLength").value
+            const lowercaseInput = document.getElementById("includeLowercase").checked
+            const uppercaseInput = document.getElementById("includeUppercase").checked
+            const numbersInput = document.getElementById("includeNumbers").checked
+            const symbolsInput = document.getElementById("includeSymbols").checked
+            //Etter jeg gjorde det her og trykte på "generer passord her" så valgte den random passord ut i fra hva jeg hadde krysset av i checkboxene, og koden fungerte.
+
+            passwordgenerator(lengthInput, lowercaseInput, uppercaseInput, numbersInput, symbolsInput)
+        })
      </script>
 </body>
 </html>
